@@ -1,0 +1,31 @@
+// Main
+main {
+
+    article {
+        border: 1px dotted darken(grey, 30);
+        padding: em(20);
+        margin-bottom: em(20);
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width: em(600)){
+        
+        section:not(.page-not-found-section) {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            > h2 {
+                width: 100%;
+            }
+        }
+
+        article {
+            width: 49%;
+            margin-bottom: 0;
+        }
+
+    }
+
+}
