@@ -1,19 +1,20 @@
 // Resets
-html {
-  box-sizing: border-box;
-  line-height: 1.5;
+ html {
+  line-height: 1.15;
   -webkit-text-size-adjust: 100%;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 main {
   display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
 hr {
@@ -34,9 +35,10 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted; 
+  text-decoration: underline dotted;
 }
 
+b,
 strong {
   font-weight: bolder;
 }
@@ -69,9 +71,7 @@ sup {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    border-style: none;
+  border-style: none;
 }
 
 button,
@@ -88,6 +88,11 @@ textarea {
 button,
 input {
   overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
 }
 
 button,
@@ -125,9 +130,60 @@ legend {
   white-space: normal;
 }
 
-button,
-select {
-  text-transform: none;
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 embed,
@@ -136,19 +192,8 @@ object {
   max-width: 100%;
 }
 
-template {
-  display: none;
-}
-
-summary {
-  display: list-item;
-}
-
-details {
-  display: block;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
