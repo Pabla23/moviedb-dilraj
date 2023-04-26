@@ -9,6 +9,7 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 5rem;
+    position: relative;
     h1 {
         z-index: 1;
         margin: 1rem;
@@ -17,6 +18,17 @@ header {
         a {
             text-decoration: none;
             color: $text-color;
+            svg {
+                position: absolute;
+                width: 180px;
+                height: 48px;
+                top: 1rem;
+                will-change: transform;
+                transition: transform 0.2s ease-in-out;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
         }
     }
 }

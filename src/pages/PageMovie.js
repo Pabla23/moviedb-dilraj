@@ -1,11 +1,8 @@
-import { useEffect } from 'react';
 import { appTitle } from '../globals/globals';
 
 const PageAbout = () => {
 
-	useEffect(() => {
-		document.title = `${appTitle} - Movie`;
-	}, []);
+	document.title = `Movie - ${appTitle}`;
 
 	return (
 		<section>

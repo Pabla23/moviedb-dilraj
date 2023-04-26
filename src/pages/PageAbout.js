@@ -1,17 +1,18 @@
 // Page - About
-import { useEffect } from 'react';
 import { appTitle } from '../globals/globals';
+import { ReactComponent as Logo } from '../svgs/TMDB.svg';
 
 const PageAbout = () => {
 
-	useEffect(() => {
-		document.title = `${appTitle} - About`;
-	}, []);
+	document.title = `About - ${appTitle}`;
 
 	return (
-		<section>
-			<h2>About Page</h2>
-			<p>Saepe vitae deserunt cupiditate vel reiciendis adipisci quasi. At, dolore qui, saepe similique id repellat ipsam sapiente repellendus commodi deleniti natus itaque hic temporibus nam nobis tempora enim suscipit quas!</p>
+		<section className='about-us'>
+			<h2>Welcome to The Blockbuster Movie Vault!</h2>
+			<p>The Blockbuster Movie Vault is a website where you can find the most popular, top rated, upcoming, and now playing movies. Browse for your favourite movies and check out their ratings.</p>
+			<p>Found something you like? Add them to your favourites and remove any item anytime.</p>
+			<p className='tmdb'>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
+			<Logo/>
 		</section>
 	);
 	
