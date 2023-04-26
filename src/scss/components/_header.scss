@@ -1,14 +1,22 @@
 // Header
+@use '../base/misc' as *;
+
 header {
+    background-color: $nav-color;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin: 0 1rem;
+    justify-content: space-between;
+    height: 5rem;
     h1 {
-        width: 100%;
+        z-index: 1;
+        margin: 1rem;
+        max-width: 100%;
+        font-size: 2rem;
         a {
             text-decoration: none;
-            color: black;
+            color: $text-color;
         }
     }
 }
