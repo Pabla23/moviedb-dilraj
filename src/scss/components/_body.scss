@@ -6,6 +6,17 @@ body {
     color: $text-color;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    padding: 0 1rem;
+    flex: 1;
+}
+
 a {
     color: $text-color;
     text-decoration: none;

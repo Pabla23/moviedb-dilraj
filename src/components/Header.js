@@ -1,13 +1,28 @@
 // Header
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
-import { appTitle } from '../globals/globals';
+import { ReactComponent as Logo } from '../svgs/dblogo.svg';
+import { useState } from 'react';
 
-const Header = () => {
+function Header () {
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleMenu = () => {
+      setIsOpen(!isOpen);
+    }
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    }
+
     return (
         <header>
-            <h1><Link to="/">{appTitle}</Link></h1>
-            <Nav/>
+            <h1>
+                <Link to="/" onClick={closeMenu}>
+                    <Logo/>
+                </Link>
+            </h1>
+            <Nav toggleMenu = {toggleMenu} closeMenu = {closeMenu} isOpen = {isOpen}/>
         </header>
     );
 }

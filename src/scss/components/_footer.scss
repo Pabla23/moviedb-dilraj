@@ -1,4 +1,16 @@
 // Footer
+@use '../base/misc' as *;
+
 footer {
-    border-top: 1px dotted darken(grey, 20);
+    background-color: $nav-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    margin-top: auto;
+    p{
+        font-size: 0.9rem;
+    }
+    svg {
+        fill: $text-color;
+    }
 }

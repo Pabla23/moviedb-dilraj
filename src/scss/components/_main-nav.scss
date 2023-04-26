@@ -76,6 +76,7 @@
     .nav-toggle {
       span:nth-of-type(1) {
         transform: translateY(11px) rotate(45deg);
+        height: 4.2px;
       }
       
       span:nth-of-type(2) {
@@ -83,12 +84,13 @@
       }
       
       span:nth-of-type(3) {
+        height: 4.2px;
         transform: translateY(-11px) rotate(-45deg);
       }
     }
     
     .nav-menu {
-      height: 13rem;
+      height: 14.2rem;
     }
   }
 }

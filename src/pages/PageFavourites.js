@@ -1,17 +1,14 @@
 // Page - Contact
-
-import { useEffect } from 'react';
 import { appTitle } from '../globals/globals';
 
 const PageFavourites = () => {
 
-	useEffect(() => {
-		document.title = `${appTitle} - Favorites`;
-	}, []);
+	document.title = `Favorites - ${appTitle}`;
 
 	return (
-    	<section>
-			<h2>The Favourites Page</h2>
+    	<section className='favourites'>
+			<h2>No movies have been added to favourites.</h2>
+			<p>To add a movie to favourites, hover over a movie and click on the heart. When the heart turns red, it means the movie has been favourited!</p>
 		</section>
 	);
 
