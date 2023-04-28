@@ -1,6 +1,7 @@
 // Page - Home
 import { Link } from 'react-router-dom';
 import { appTitle } from '../globals/globals';
+import Movies from '../components/Movies';
 
 const PageHome = () => {
 
@@ -9,10 +10,10 @@ const PageHome = () => {
     return (
         <section>
             <h2>Home Page</h2>
+            <Movies/>
             <h2><Link to="/movie">View Movie</Link></h2>
         </section>
     );
-
 };
 
 export default PageHome;

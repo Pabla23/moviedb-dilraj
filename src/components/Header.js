@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import { ReactComponent as Logo } from '../svgs/dblogo.svg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Header () {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +14,19 @@ function Header () {
     const closeMenu = () => {
         setIsOpen(false);
     }
+
+    const isDesktop = (e) => {
+        if(e.matches){
+            setIsOpen(false);
+        }
+    }
+
+    useEffect(() => {
+        let mediaQuery = window.matchMedia('(min-width: 700px)');
+        mediaQuery.addEventListener('change', isDesktop);
+
+        return () => mediaQuery.removeEventListener('change', isDesktop);
+  }, []);
 
     return (
         <header>

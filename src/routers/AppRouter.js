@@ -20,10 +20,14 @@ function AppRouter() {
           <main>
             <Routes>
               <Route path="/" exact element={<PageHome />} />
+              <Route path="/sort/popular" element={<PageHome sort = "popular"/>} />
+              <Route path="/sort/top-rated" element={<PageHome sort = "top_rated"/>} />
+              <Route path="/sort/now-playing" element={<PageHome sort = "now_playing"/>} />
+              <Route path="/sort/upcoming" element={<PageHome sort = "upcoming"/>} />
               <Route path="/about" element={<PageAbout />} />
               <Route path="/favourites" element={<PageFavourites />} />
               <Route path="*" element={<PageNotFound />} />
-              <Route path="/movie" element={<PageMovie />} />
+              <Route path="/movie/:id" element={<PageMovie />} />
             </Routes>
           </main>
         <Footer />
