@@ -11,7 +11,6 @@ const PageFavourites = () => {
 			<p>To add a movie to favourites, hover over a movie and click on the heart. When the heart turns red, it means the movie has been favourited!</p>
 		</section>
 	);
-
 };
 
 export default PageFavourites;
