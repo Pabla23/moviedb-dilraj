@@ -30,11 +30,11 @@ function Header () {
 
     return (
         <header>
-            <h1>
+            <div className='home-logo'>
                 <Link to="/" onClick={closeMenu}>
                     <Logo/>
                 </Link>
-            </h1>
+            </div>
             <Nav toggleMenu = {toggleMenu} closeMenu = {closeMenu} isOpen = {isOpen}/>
         </header>
     );
