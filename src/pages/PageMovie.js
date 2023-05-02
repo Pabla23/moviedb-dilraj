@@ -14,7 +14,7 @@ const PageMovie = () => {
 
         const fetchMovie = async () => {
 
-            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, {
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -22,9 +22,9 @@ const PageMovie = () => {
                 }
             });
 
-            let rawMovieData = await res.json();
-            setMovieData(rawMovieData);
-
+            let data = await response.json();
+            console.log(data);
+            setMovieData(data);
         }
 
         fetchMovie();
@@ -35,8 +35,6 @@ const PageMovie = () => {
 
 	return (
 		<section>
-			<h2>Movie Page {id}</h2>
-			<p>Movie details will be here</p>
 			<SingleMovie movieObj={movieData} />
 		</section>
 	);

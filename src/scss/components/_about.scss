@@ -1,6 +1,9 @@
 // Main
+@use '../base/misc' as *;
+
 .about-us {
     margin-top: 3.5rem;
+    padding: $page-padding;
     p{
         margin-bottom: 0;
     }
@@ -11,5 +14,14 @@
     svg {
         width: 5rem;
         margin-top: 0.5rem;
+    }
+}
+
+@media (min-width: 50em) {
+    .about-us {
+        font-size: 1.8rem;
+        p {
+            font-size: 1.2rem;
+        }
     }
 }

@@ -54,6 +54,7 @@
     height: 0;
     overflow: hidden;
     transition: height 0.3s ease-in-out;
+    z-index: 99;
     .active {
       border-bottom: 4px solid $text-color;
     }
@@ -95,7 +96,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 45em) {
   .main-nav {
     width: fit-content;
     .nav-menu {
@@ -111,6 +112,9 @@
         a {
           padding: 0.3rem;
           font-size: 1.2rem;
+          &:hover {
+            color: $hover-color;
+          }
         }
       }
     }
