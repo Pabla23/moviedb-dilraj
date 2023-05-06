@@ -5,6 +5,7 @@
     max-width: 532px;
     margin: 2.5rem auto;
     padding: $page-padding;
+    margin-top: 8rem;
     .sort-buttons {
         margin-bottom: 3rem;
         ul {
@@ -29,9 +30,24 @@
                     &:hover {
                         background-color: $hover-color;
                     }
+                    &.active {
+                        background-color: $hover-color;
+                    }
                 }
             }
         }
+    }
+}
+
+.search {
+    z-index: 1002;
+}
+
+.top-btn {
+    width: 6rem;
+    margin: 0 auto;
+    .arrow {
+        width: 6rem;
     }
 }
 
@@ -48,7 +64,7 @@
             left: 0;
             right: 0;
             bottom: 6px;
-            background-color: rgba(0, 0, 0, 0.900);
+            background-color: rgba(0, 0, 0, 0.820);
             opacity: 0;
             transition: opacity 0.2s ease-in-out;
             &:hover, &:active, &:focus {
@@ -60,23 +76,26 @@
                 right: 1rem;
                 top: 1rem;
                 cursor: pointer;
-                .st0 {
-                    fill: white;
-                    &:hover {
-                        fill: red;
-                    }
-                }
+            }
+            .st0 {
+                fill: white;
             }
         }
     }
 }
 
+
 .title-overview {
     position: absolute;
-    top: 4.8rem;
+    top: 4.5rem;
     left: 1rem;
-    h3 {
+    padding-right: 0.5rem;
+    h2 {
         font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+    p {
+        margin-top: 0.5rem;
     }
 }
 .release {
@@ -93,9 +112,6 @@
     color: black;
     padding: 0.8rem 1rem;
     border-radius: 0.5rem;
-    &:hover {
-        background-color: $hover-color;
-    }
 }
 .rating {
     position: absolute;
@@ -105,7 +121,16 @@
     padding: 0.2rem 0.4rem;
 }
 
-@media (min-width: 345px) {
+@media (min-width: 330px) {
+    .title-overview {
+         top: 8rem;
+    }
+    .link {
+        bottom: 4rem;
+    }
+}
+
+@media (min-width: 350px) {
     .title-overview {
          top: 8rem;
     }
@@ -116,6 +141,7 @@
 
 @media (min-width: 45em) {
     .home-content {
+        margin-top: 6rem;
         .sort-buttons {
             margin-bottom: 0;
             ul {
@@ -123,13 +149,33 @@
             }
         }
     }
+
+    .top-btn {
+        margin-top: 2rem;
+        transition: transform 0.2s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .movie-info {
+        .st0:hover {
+            fill: red;
+        }
+    }
+
+    .link:hover {
+        background-color: $hover-color;
+    }
 }
 
 @media (min-width: 58em) {
     .home-content {
         max-width: 100%;
         margin: 0 auto;
+        margin-top: 5.8rem;
         .sort-buttons {
+            margin-bottom: 1rem;
             ul {
                 margin: 0;
                 display: flex;

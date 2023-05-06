@@ -5,13 +5,26 @@ footer {
     background-color: $nav-color;
     display: flex;
     justify-content: space-between;
-    padding: 2rem 1rem;
+    padding: 2.1rem 1rem;
     margin-top: 2rem;
+    z-index: 1;
     p{
         font-size: 0.9rem;
     }
     svg {
         fill: $text-color;
-        width: 10rem;
+        width: 9.5rem;
+    }
+}
+
+@media (min-width: 45em) {
+    footer {
+        p {
+            padding-left: 2rem;
+        }
+        svg {
+            padding-right: 2rem;
+            width: 15rem;
+        }
     }
 }

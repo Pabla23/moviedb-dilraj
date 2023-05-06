@@ -34,9 +34,9 @@ const PageMovie = () => {
 	document.title = `Movie - ${appTitle}`;
 
 	return (
-		<section>
+		<div className='single-movie-wrapper'>
 			<SingleMovie movieObj={movieData} />
-		</section>
+		</div>
 	);
 };
 

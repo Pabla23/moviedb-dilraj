@@ -10,10 +10,9 @@ function Nav(props) {
               <span></span>
           </button>
           <ul className="nav-menu">
-              {/* activeClassName is all lowercase to get rid of a console warning... */}
-              <li><NavLink to="/" activeclassname="active" onClick={props.closeMenu}>Home</NavLink></li>
-              <li><NavLink to="/about" activeclassname="active" onClick={props.closeMenu}>About</NavLink></li>
-              <li><NavLink to="/favourites" activeclassname="active" onClick={props.closeMenu}>Favourites</NavLink></li>
+              <li><NavLink to="/" onClick={props.closeMenu}>Home</NavLink></li>
+              <li><NavLink to="/about" onClick={props.closeMenu}>About</NavLink></li>
+              <li><NavLink to="/favourites" onClick={props.closeMenu}>Favourites</NavLink></li>
           </ul>
       </nav>
     );

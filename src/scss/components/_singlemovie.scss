@@ -1,0 +1,176 @@
+@use '../base/misc' as *;
+
+.single-movie-wrapper {
+    position: relative;
+    top: 5rem;
+    margin-bottom: 7rem;
+}
+
+.single-movie-info {
+    padding: $page-padding;
+    position: relative;
+    svg {
+        width: 3rem;
+        position: absolute;
+        top: 0;
+        right: 1.5rem;
+        cursor: pointer;
+    }
+    .st0 {
+        fill: white;
+    }
+    h2 {
+        width: 80%;
+    }
+    .single-rating {
+        border: solid 2px $text-color;
+        padding: 0.2rem 0.4rem;
+        width: fit-content;
+        position: absolute;
+        bottom: 0;
+        right: 2rem;
+    }
+    .other-info {
+        margin-top: 4rem;
+        width: 12rem;
+    }
+}
+
+.desktop {
+    display: none;
+}
+
+@media (min-width: 385px) {
+    .single-movie-info {
+        .other-info {
+            width: 15rem;
+        }
+    }
+}
+
+@media (min-width: 440px) {
+    .single-movie-info {
+        .other-info {
+            width: 18.4rem;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+
+    .single-movie-wrapper {
+        margin-bottom: 0;
+    }
+
+    .single-poster {
+        position: relative;
+        min-height: 46rem;
+        max-height: 56.5rem;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.777);
+            z-index: 1;
+          }
+        .desktop {
+            display: block;
+            object-fit: cover;
+            min-height: 46rem;
+            max-height: 56.5rem;
+            width: 100%;
+        }
+    }
+
+    .single-movie-info {
+        position: absolute;
+        top: 5rem;
+        z-index: 1;
+        min-height: 40rem;
+        max-height: 45rem;
+        width: 100%;
+        h2 {
+            font-size: 2rem;
+        }
+        p {
+            line-height: 2;
+        }
+        .st0:hover {
+            fill: red;
+        }
+        .single-rating {
+            border: solid 2px $text-color;
+            padding: 0.2rem 0.4rem;
+            width: fit-content;
+            position: absolute;
+            bottom: 6rem;
+            right: 5rem;
+            font-size: 1.2rem
+        }
+        .other-info {
+            position: absolute;
+            bottom: 5rem;
+            width: 18rem;
+        }
+        svg {
+            top: 2rem;
+            right: 2.8rem;
+        }
+    }
+
+    .mobile {
+        display: none;
+    }
+}
+
+@media (min-width: 50em) {
+    .single-movie-info {
+        height: 56rem;
+        padding: 0 5rem;
+        h2 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        .single-rating {
+            font-size: 2rem;
+            bottom: 10rem;
+        }
+        .other-info {
+            bottom: 9rem;
+            width: fit-content;
+        }
+        svg {
+            top: 4rem;
+            right: 6rem;
+        }
+    }
+}
+
+@media (min-width: 1620px) {
+    .single-movie-info {
+        padding-left: 14rem;
+        h2 {
+            font-size: 4rem;
+        }
+        .single-rating {
+            bottom: 5rem;
+            right: 16rem;
+        }
+        p {
+            width: 80rem;
+        }
+        .other-info {
+            bottom: 4rem;
+        }
+        svg {
+            top: 5rem;
+            right: 16rem;
+            width: 4rem;
+        }
+    }
+}

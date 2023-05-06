@@ -6,17 +6,22 @@ function MovieCard({ movieObj }) {
 
     function limitWords(string) {
         const words = string.split(' ');
-        if (words.length <= 25) {
+        if (words.length <= 20) {
           return string;
         }
-        return words.slice(0, 25).join(' ') + '...';
+        return words.slice(0, 20).join(' ') + '...';
       }
 
     function formatDate(string) {
         const date = new Date(string);
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return date.toLocaleDateString([], options);
-    }  
+    }
+
+    function formatRating (rating) {
+        let ratingNumber = parseFloat(rating);
+        return ratingNumber.toFixed(1);
+    }
 
     return (
         <div className="movie">
@@ -29,10 +34,10 @@ function MovieCard({ movieObj }) {
             <div className="movie-info">
                 <p className='release'>{formatDate(movieObj.release_date)}</p>
                 <div className='title-overview'>
-                    <h3>{movieObj.title}</h3>
+                    <h2>{movieObj.title}</h2>
                     <p>{limitWords(movieObj.overview)}</p>
                 </div>
-                <p className='rating'>{movieObj.vote_average} / 10</p>
+                <p className='rating'>{formatRating(movieObj.vote_average)} / 10</p>
                 <Link className='link' to={`/movie/${movieObj.id}`}>More Info</Link>
                 <Heart className='fav-btn'/>
             </div>

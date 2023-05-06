@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import { ReactComponent as Logo } from '../svgs/dblogo.svg';
 import { useState, useEffect } from 'react';
+import Search from './Search';
 
 function Header () {
     const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,7 @@ function Header () {
                     <Logo/>
                 </Link>
             </div>
+            <Search closeMenu={closeMenu}/>
             <Nav toggleMenu = {toggleMenu} closeMenu = {closeMenu} isOpen = {isOpen}/>
         </header>
     );

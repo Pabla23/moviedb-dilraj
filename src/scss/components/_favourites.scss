@@ -1,6 +1,8 @@
 @use '../base/misc' as *;
 
 .favourites {
+    position: relative;
+    top: 5rem;
     margin-top: 3.5rem;
     padding: $page-padding;
 }
