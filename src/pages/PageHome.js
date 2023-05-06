@@ -1,10 +1,11 @@
 // Page - Home
-import { appTitle } from '../globals/globals';
+import { appTitle, api_token } from '../globals/globals';
 import Movies from '../components/Movies';
 import { useEffect, useState } from 'react';
-import { api_token } from '../globals/globals';
 import SortButtons from '../components/SortButtons';
 import Slideshow from '../components/Slideshow';
+import { ReactComponent as Arrow } from '../svgs/arrow.svg';
+
 
 const PageHome = ({sort = "popular"}) => {
 
@@ -34,11 +35,16 @@ const PageHome = ({sort = "popular"}) => {
     }, [sort]);
 
     return (
-        <div className='home-wrapper'>
+        <div className='home-wrapper' id='home'>
             <Slideshow movieData = {movieData} />
             <div className='home-content'>
                 <SortButtons/>
                 <Movies movieData = {movieData}/>
+                <div className='top-btn'>
+                    <a href="#home">
+                        <Arrow className='arrow'/>
+                    </a>
+                </div>
             </div>
         </div>
     );

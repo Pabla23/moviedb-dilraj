@@ -1,5 +1,9 @@
 // Body
 @use '../base/misc' as *;
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Alatsi','Roboto', sans-serif;
     background-color: $background-color;

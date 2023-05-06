@@ -9,25 +9,44 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 5rem;
-    position: relative;
-    .home-logo {
-        z-index: 100;
-        margin: 1rem;
-        max-width: 100%;
-        a {
-            text-decoration: none;
-            color: $text-color;
-            svg {
-                position: absolute;
-                width: 180px;
-                height: 48px;
-                top: 1rem;
-                will-change: transform;
-                transition: transform 0.2s ease-in-out;
-                &:hover {
-                    transform: scale(1.05);
-                }
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    max-width: 100vw;
+}
+
+.home-logo {
+    z-index: 100;
+    margin: 1rem;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
+    svg {
+        position: absolute;
+        width: 180px;
+        height: 48px;
+        top: 1rem;
+        will-change: transform;
+        transition: transform 0.2s ease-in-out;
+    }
+}
+
+@media (min-width: 45em) {
+    a {
+        svg {
+            width: 200px;
+            height: 54px;
+            top: 0.8rem;
+            &:hover {
+                transform: scale(1.05);
             }
         }
     }
 }
+
+
+

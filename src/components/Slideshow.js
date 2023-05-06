@@ -42,7 +42,12 @@ function Slideshow () {
         const date = new Date(string);
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return date.toLocaleDateString([], options);
-      }      
+    }
+      
+      function formatRating (rating) {
+        let ratingNumber = parseFloat(rating);
+        return ratingNumber.toFixed(1);
+    }
 
     //mapped through movieData 3 times to avoid key error in console... and for stlying purposes
     return (
@@ -58,9 +63,9 @@ function Slideshow () {
             <div className = "slide-info-wrapper">
                 {movieData.map((movie, i) => (
                     <div className={`slide-info ${i === activeIndex ? 'active' : ''}`} key={i}>
-                        <h1 key={movie.title}>{movie.title}</h1>
-                        <p key={movie.release_date}>{formatDate(movie.release_date)}</p>
-                        <div className='movie-rating' key={movie.vote_average}>{movie.vote_average} / 10</div>
+                        <h1>{movie.title}</h1>
+                        <p>{formatDate(movie.release_date)}</p>
+                        <div className='movie-rating'>{formatRating(movie.vote_average)} / 10</div>
                         <Link to={`/movie/${currentMovie.id}`} >More Info</Link>
                     </div>
                 ))}
