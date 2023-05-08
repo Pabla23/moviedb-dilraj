@@ -4,7 +4,7 @@ function Movies ( {movieData} ) {
 
   return (
     <div className="movies">
-        {movieData.map((oneMovie, i) => <MovieCard key={i} movieObj={oneMovie} />)}
+        {movieData.map((oneMovie, i) => <MovieCard key={i} movieObj={oneMovie}/>)}
     </div>
   )
 }
