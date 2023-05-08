@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { api_token } from '../globals/globals';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Icon } from '../svgs/search.svg';
+import noPoster from '../images/no-movie-poster.jpg';
 
 function Search ( {closeMenu} ) {
 
@@ -74,6 +75,17 @@ function Search ( {closeMenu} ) {
         return date.toLocaleDateString([], options);
     }
 
+    function formatRating (rating) {
+        let ratingNumber = parseFloat(rating);
+        if (ratingNumber === 0) {
+            ratingNumber = toString(ratingNumber);
+            ratingNumber = 'No Rating';
+            return ratingNumber;
+        } else {
+            return (ratingNumber.toFixed(1) + ' / 10');
+        }
+    }
+
     return (
         <div className="search-wrapper" ref={searchWrapperRef}>
 
@@ -91,9 +103,11 @@ function Search ( {closeMenu} ) {
                         <li key={movie.id}>
                             <div className="info">
                                 <Link to={`/movie/${movie.id}`} onClick={closeSearch}>
-                                    <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>
+                                    {movie.poster_path === null ? <img src={noPoster} alt="No poster" /> :
+                                        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>}
                                     <h2>{movie.title}</h2>
                                     <p>{formatDate(movie.release_date)}</p>
+                                    <div className='search-rating'>{formatRating(movie.vote_average)}</div>
                                 </Link>
                             </div>
                         </li>

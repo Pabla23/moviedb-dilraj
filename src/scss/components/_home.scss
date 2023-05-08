@@ -31,7 +31,8 @@
                         background-color: $hover-color;
                     }
                     &.active {
-                        background-color: $hover-color;
+                        background-color: $nav-color;
+                        color: $text-color;
                     }
                 }
             }
@@ -58,29 +59,30 @@
         max-width: 380px;
         position: relative;
         margin-bottom: 3rem;
-        .movie-info {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 6px;
-            background-color: rgba(0, 0, 0, 0.820);
-            opacity: 0;
-            transition: opacity 0.2s ease-in-out;
-            &:hover, &:active, &:focus {
-                opacity: 1;
-            }
-            svg {
-                width: 3rem;
-                position: absolute;
-                right: 1rem;
-                top: 1rem;
-                cursor: pointer;
-            }
-            .st0 {
-                fill: white;
-            }
-        }
+    }
+}
+
+.movie-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+    background-color: rgba(0, 0, 0, 0.820);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    &:hover, &:active, &:focus {
+        opacity: 1;
+    }
+    svg {
+        width: 3rem;
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        cursor: pointer;
+    }
+    .st0 {
+        fill: white;
     }
 }
 
@@ -118,19 +120,20 @@
     left: 1rem;
     top: 2.3rem;
     border: solid 2px $text-color;
+    border-radius: 5px;
     padding: 0.2rem 0.4rem;
 }
 
-@media (min-width: 330px) {
+@media (min-width: 340px) {
     .title-overview {
-         top: 8rem;
+         top: 5rem;
     }
     .link {
-        bottom: 4rem;
+        bottom: 3rem;
     }
 }
 
-@media (min-width: 350px) {
+@media (min-width: 360px) {
     .title-overview {
          top: 8rem;
     }
