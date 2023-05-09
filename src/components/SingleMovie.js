@@ -1,5 +1,5 @@
 import noPoster from '../images/no-movie-poster.jpg';
-import { ReactComponent as Heart } from '../svgs/heart.svg';
+import FavButton from './FavButton';
 
 function SingleMovie({ movieObj }) {
 
@@ -42,7 +42,7 @@ function SingleMovie({ movieObj }) {
                 <div className="single-movie-info">
                     <h2>{movieObj.title}</h2>
                     <p>{movieObj.overview}</p>
-                    <Heart/>
+                    <FavButton movieObj={movieObj}/>
                     <div className='single-rating'>{formatRating(movieObj.vote_average)}</div>
                     <div className='other-info'>
                         <p>{convertToHours(movieObj.runtime)}</p>

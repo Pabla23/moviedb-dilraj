@@ -19,7 +19,6 @@ function Slideshow () {
 
             let data = await response.json();
             data = data.results.splice(0, 5);
-
             setMovieData(data);
         };
 

@@ -74,15 +74,30 @@
     &:hover, &:active, &:focus {
         opacity: 1;
     }
+    button {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        border: none;
+        background-color: transparent;
+    }
     svg {
         width: 3rem;
         position: absolute;
-        right: 1.5rem;
-        top: 1.5rem;
+        right: -0.5rem;
+        top: -0.5rem;
         cursor: pointer;
     }
     .st0 {
         fill: white;
+    }
+}
+
+.movie-info {
+    svg.red {
+        .st0 {
+            fill: red;
+        }
     }
 }
 
