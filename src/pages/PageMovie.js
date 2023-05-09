@@ -23,7 +23,6 @@ const PageMovie = () => {
             });
 
             let data = await response.json();
-            console.log(data);
             setMovieData(data);
         }
 

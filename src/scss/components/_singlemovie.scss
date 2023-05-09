@@ -12,12 +12,24 @@
     svg {
         width: 3rem;
         position: absolute;
-        top: 0;
-        right: 1.5rem;
+        top: -1.7rem;
+        right: -0.5rem;
         cursor: pointer;
+        &.red {
+            .st0 {
+                fill: red;
+            }
+        }
     }
     .st0 {
         fill: white;
+    }
+    button {
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        top: 2rem;
+        right: 2.5rem;
     }
     h2 {
         width: 80%;
@@ -113,8 +125,8 @@
             width: 18rem;
         }
         svg {
-            top: 2rem;
-            right: 2.8rem;
+            top: -0.3rem;
+            right: 1.5rem;
         }
     }
 
@@ -139,8 +151,8 @@
             width: fit-content;
         }
         svg {
-            top: 4rem;
-            right: 6rem;
+            top: 1.3rem;
+            right: 4rem;
         }
     }
 }
@@ -170,8 +182,8 @@
             bottom: 2rem;
         }
         svg {
-            top: 5rem;
-            right: 16rem;
+            top: 3rem;
+            right: 14rem;
             width: 4rem;
         }
     }

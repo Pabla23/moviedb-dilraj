@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
 import FavButton from './FavButton';
 
-function MovieCard({ movieObj, isFav }) {
+function MovieCard({ movieObj, removeFromFavorites }) {
 
     function limitWords(string) {
         const words = string.split(' ');
@@ -39,10 +39,7 @@ function MovieCard({ movieObj, isFav }) {
                 </div>
                 <p className='rating'>{formatRating(movieObj.vote_average)} / 10</p>
                 <Link className='link' to={`/movie/${movieObj.id}`}>More Info</Link>
-                {isFav ? 
-                    <FavButton kittenObj={movieObj} remove={true} /> : 
-                    <FavButton kittenObj={movieObj} />
-                }
+                <FavButton movieObj={movieObj} removeFromFavorites={removeFromFavorites}/>
             </div>
         </div>
     )

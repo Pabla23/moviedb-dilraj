@@ -26,7 +26,6 @@ function Search ( {closeMenu} ) {
 
             let data = await response.json();
             data = data.results.splice(0, 6);
-            console.log(data);
             setMovieData(data);
         }
 

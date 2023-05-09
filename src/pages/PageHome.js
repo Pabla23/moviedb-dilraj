@@ -25,8 +25,6 @@ const PageHome = ({sort = "popular"}) => {
 
             let data = await response.json();
             data = data.results.splice(0, 12);
-            console.log(data);
-
             setMovieData(data);
         };
 
