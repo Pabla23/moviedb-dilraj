@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import MovieCard from '../components/MovieCard';
 
 const PageFavourites = () => {
+
   const [favMovies, setFavMovies] = useState([]);
 
   useEffect(() => {
@@ -11,7 +12,8 @@ const PageFavourites = () => {
     const favs = storedFavs ? JSON.parse(storedFavs) : [];
     setFavMovies(favs);
   }, []);
-
+  
+  // Remove movie from favourites list as soon as the "remove" button is clicked... instead of having to refresh the page
   function removeFromFavorites(movieId) {
     setFavMovies(favMovies.filter(movie => movie.id !== movieId));
   }

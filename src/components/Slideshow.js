@@ -26,6 +26,7 @@ function Slideshow () {
 
     }, []);
 
+    // Set interval to change slides every 6 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prevIndex) =>
@@ -34,7 +35,6 @@ function Slideshow () {
         }, 6000);
         return () => clearInterval(interval);
     }, [movieData]);
-
     const currentMovie = movieData[activeIndex];
 
     function formatDate(string) {
@@ -43,12 +43,19 @@ function Slideshow () {
         return date.toLocaleDateString([], options);
     }
       
-      function formatRating (rating) {
+    // Format rating to 1 decimal place. Sometimes the API returns 0, if so, return 'No Rating'
+    function formatRating (rating) {
         let ratingNumber = parseFloat(rating);
-        return ratingNumber.toFixed(1);
+        if (ratingNumber === 0) {
+            ratingNumber = toString(ratingNumber);
+            ratingNumber = 'No Rating';
+            return ratingNumber;
+        } else {
+            return (ratingNumber.toFixed(1) + ' / 10');
+        }
     }
 
-    //mapped through movieData 3 times to avoid key error in console... and for stlying purposes
+    //mapped through movieData 3 times to avoid key error in console... and for styling purposes
     return (
         <div className='slideshow-wrapper'>
             <div className='slideshow'>
@@ -64,7 +71,7 @@ function Slideshow () {
                     <div className={`slide-info ${i === activeIndex ? 'active' : ''}`} key={i}>
                         <h1>{movie.title}</h1>
                         <p>{formatDate(movie.release_date)}</p>
-                        <div className='movie-rating'>{formatRating(movie.vote_average)} / 10</div>
+                        <div className='movie-rating'>{formatRating(movie.vote_average)}</div>
                         <Link to={`/movie/${currentMovie.id}`} >More Info</Link>
                     </div>
                 ))}

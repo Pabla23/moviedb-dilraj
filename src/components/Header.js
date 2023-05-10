@@ -33,7 +33,7 @@ function Header () {
         <header>
             <div className='home-logo'>
                 <Link to="/" onClick={closeMenu}>
-                    <Logo/>
+                    <Logo className='my-logo'/>
                 </Link>
             </div>
             <Search closeMenu={closeMenu}/>

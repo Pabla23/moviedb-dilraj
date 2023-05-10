@@ -1,7 +1,7 @@
 // Nav
 import { NavLink } from 'react-router-dom';
 
-function Nav(props) {
+function Nav (props) {
     return (
       <nav className={`main-nav ${props.isOpen ? 'open' : ''}`}>
           <button className="nav-toggle" onClick={props.toggleMenu}>
