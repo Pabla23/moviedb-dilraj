@@ -25,7 +25,7 @@ const PageFavourites = () => {
       {favMovies.length === 0 ? (
 		<div className='no-favs'>
 			<h1>No Movies Have Been Added to Favourites</h1>
-			<p>To add a movie to favourites, hover over a movie and click on the heart. When the heart turns red, it means the movie has been favourited!</p>
+			<p>To add a movie to favourites, hover over a movie and click on the heart. When the heart turns red, it means the movie has been favourited! Then, come back here and you'll see all of your favourites</p>
 		</div>
       ) : (
 		<div>
