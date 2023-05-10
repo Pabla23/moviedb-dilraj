@@ -9,12 +9,9 @@
     .sort-buttons {
         margin-bottom: 3rem;
         ul {
-            display: grid;
+            @include grid-center;
             grid-template-columns: repeat(2, 130px);
             grid-gap: 1rem;
-            align-items: center;
-            justify-items: center;
-            justify-content: center;
             padding: 0;
             height: 8rem;
             li {
@@ -46,9 +43,11 @@
 
 .top-btn {
     width: 6rem;
+    height: 6rem;
     margin: 0 auto;
     .arrow {
         width: 6rem;
+        height: 6rem;
     }
 }
 
@@ -63,23 +62,17 @@
 }
 
 .movie-info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    @include stretch;
     bottom: 6px;
     background-color: rgba(0, 0, 0, 0.820);
-    opacity: 0;
     transition: opacity 0.2s ease-in-out;
     &:hover, &:active, &:focus {
         opacity: 1;
     }
     button {
-        position: absolute;
+        @include format-button;
         right: 2rem;
         top: 2rem;
-        border: none;
-        background-color: transparent;
     }
     svg {
         width: 3rem;
@@ -121,22 +114,18 @@
     top: 0;
 }
 .link {
-    position: absolute;
+    @include center-absolute;
     bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: $text-color;
     color: black;
     padding: 0.8rem 1rem;
     border-radius: 0.5rem;
 }
 .rating {
+    @include rating;
     position: absolute;
     left: 1rem;
     top: 2.3rem;
-    border: solid 2px $text-color;
-    border-radius: 5px;
-    padding: 0.2rem 0.4rem;
 }
 
 @media (min-width: 340px) {
@@ -163,16 +152,16 @@
         .sort-buttons {
             margin-bottom: 0;
             ul {
-                display: flex;
+                @include flex-center;
             }
         }
     }
 
     .top-btn {
         margin-top: 2rem;
-        transition: transform 0.2s ease-in-out;
+        transition: transform 0.3s ease-in-out;
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
     }
 
@@ -196,7 +185,6 @@
             margin-bottom: 1rem;
             ul {
                 margin: 0;
-                display: flex;
                 li {
                     margin: 0 2rem;
                 }
@@ -205,10 +193,9 @@
     }
 
     .movies {
+        @include grid-center;
         max-width: 100%;
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
         grid-gap: 4rem;
         margin: 0 5rem;
         .movie {

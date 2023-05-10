@@ -8,11 +8,9 @@
 }
 
 .search-icon {
-    position: absolute;
+    @include format-button;
     top: 1.7rem;
     right: 5.2rem;
-    background-color: transparent;
-    border: none;
     padding: 0;
     cursor: pointer;
     svg {
@@ -190,12 +188,8 @@
     }
 
     .search-rating {
-        display: block;
         margin-left: 1rem;
         margin-top: 1rem;
-        border: solid 2px $text-color;
-        border-radius: 5px;
-        padding: 0.2rem 0.4rem;
-        width: fit-content;
+        @include rating;
     }
 }

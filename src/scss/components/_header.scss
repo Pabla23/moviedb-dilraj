@@ -13,7 +13,6 @@ header {
     right: 0;
     left: 0;
     z-index: 1000;
-    max-width: 100vw;
 }
 
 .home-logo {
@@ -25,7 +24,7 @@ header {
 a {
     text-decoration: none;
     color: $text-color;
-    svg {
+    .my-logo {
         position: absolute;
         width: 180px;
         height: 48px;

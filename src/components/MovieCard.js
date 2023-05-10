@@ -18,9 +18,16 @@ function MovieCard({ movieObj, removeFromFavorites }) {
         return date.toLocaleDateString([], options);
     }
 
+    // Format rating to 1 decimal place. Sometimes the API returns 0, if so, return 'No Rating'
     function formatRating (rating) {
         let ratingNumber = parseFloat(rating);
-        return ratingNumber.toFixed(1);
+        if (ratingNumber === 0) {
+            ratingNumber = toString(ratingNumber);
+            ratingNumber = 'No Rating';
+            return ratingNumber;
+        } else {
+            return (ratingNumber.toFixed(1) + ' / 10');
+        }
     }
 
     return (
@@ -37,7 +44,7 @@ function MovieCard({ movieObj, removeFromFavorites }) {
                     <h2>{movieObj.title}</h2>
                     <p>{limitWords(movieObj.overview)}</p>
                 </div>
-                <p className='rating'>{formatRating(movieObj.vote_average)} / 10</p>
+                <p className='rating'>{formatRating(movieObj.vote_average)}</p>
                 <Link className='link' to={`/movie/${movieObj.id}`}>More Info</Link>
                 <FavButton movieObj={movieObj} removeFromFavorites={removeFromFavorites}/>
             </div>

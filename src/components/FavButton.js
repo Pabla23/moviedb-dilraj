@@ -14,6 +14,7 @@ function FavButton({ movieObj, removeFromFavorites }) {
     const storedFavs = localStorage.getItem('favourites');
     const favs = storedFavs ? JSON.parse(storedFavs) : [];
     
+    // Check if the movie is already in the favourites list... avoid duplicates
     if (!favs.find(fav => fav.id === movieObj.id)) {
       favs.push(movieObj);
       localStorage.setItem('favourites', JSON.stringify(favs));
@@ -28,11 +29,13 @@ function FavButton({ movieObj, removeFromFavorites }) {
     const newFavs = favs.filter(fav => fav.id !== movieObj.id);
     localStorage.setItem('favourites', JSON.stringify(newFavs));
     setIsFav(false);
+    // If we are on the favourites page, remove the movie from the list
     if (window.location.pathname === '/favourites') {
       removeFromFavorites(movieObj.id);
     }
   }
 
+  // used 2 different buttons to separate add and remove favs
   return (
     <>
       {!isFav ? (

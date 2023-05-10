@@ -49,6 +49,7 @@ function Search ( {closeMenu} ) {
         setQuery('');
     };
 
+    // Close search input when clicking outside of the search wrapper
     useEffect(() => {
         const handleClickOutside = (event) => {
           if (
@@ -62,7 +63,6 @@ function Search ( {closeMenu} ) {
         };
     
         document.addEventListener('mousedown', handleClickOutside);
-    
         return () => {
           document.removeEventListener('mousedown', handleClickOutside);
         };
@@ -74,6 +74,7 @@ function Search ( {closeMenu} ) {
         return date.toLocaleDateString([], options);
     }
 
+    // Format rating to 1 decimal place. Sometimes the API returns 0, if so, return 'No Rating'
     function formatRating (rating) {
         let ratingNumber = parseFloat(rating);
         if (ratingNumber === 0) {
