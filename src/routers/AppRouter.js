@@ -10,10 +10,13 @@ import PageHome from '../pages/PageHome';
 import PageAbout from '../pages/PageAbout';
 import PageFavourites from '../pages/PageFavourites';
 import PageMovie from '../pages/PageMovie';
+import PageNotFound from '../pages/PageNotFound';
+// Globals
+import { appFolderName } from '../globals/globals';
 
 function AppRouter() {
   return (
-    <BrowserRouter basename="/moviedb">
+    <BrowserRouter basename={appFolderName}>
       <div className="wrapper">
         <Header />
           <main>
@@ -26,6 +29,7 @@ function AppRouter() {
               <Route path="/about" element={<PageAbout />} />
               <Route path="/favourites" element={<PageFavourites />} />
               <Route path="/movie/:id" element={<PageMovie />} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </main>
         <Footer />
