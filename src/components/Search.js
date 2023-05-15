@@ -89,7 +89,7 @@ function Search ( {closeMenu} ) {
     return (
         <div className="search-wrapper" ref={searchWrapperRef}>
 
-            <button className='search-icon' onClick={toggleSearch}>
+            <button className='search-icon' onClick={toggleSearch} title='Search'>
                 <Icon onClick={closeMenu}/>
             </button>
 
