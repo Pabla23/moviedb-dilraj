@@ -30,7 +30,7 @@ function FavButton({ movieObj, removeFromFavorites }) {
     localStorage.setItem('favourites', JSON.stringify(newFavs));
     setIsFav(false);
     // If we are on the favourites page, remove the movie from the list
-    if (window.location.pathname === '/favourites') {
+    if (window.location.pathname === '/moviedb/favourites') {
       removeFromFavorites(movieObj.id);
     }
   }
