@@ -39,7 +39,7 @@ const PageHome = ({sort = "popular"}) => {
                 <SortButtons/>
                 <Movies movieData = {movieData}/>
                 <div className='top-btn'>
-                    <a href="#home">
+                    <a href="#home" title='Back To Top'>
                         <Arrow className='arrow'/>
                     </a>
                 </div>
