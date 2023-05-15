@@ -28,7 +28,7 @@ function FavButton({ movieObj, removeFromFavorites }) {
     setIsFav(false);
 
     // If we are on the favourites page, remove the movie from the "favourites display" list instantly
-    if (window.location.pathname === '/favourites') {
+    if (window.location.pathname === '/moviedb/favourites') {
       removeFromFavorites(movieObj.id);
     }
   }
