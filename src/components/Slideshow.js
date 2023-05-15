@@ -60,8 +60,8 @@ function Slideshow () {
         <div className='slideshow-wrapper'>
             <div className='slideshow'>
                 {movieData.map((movie, i) => (
-                    <div key={movie.title}>
-                        <img className={`slide ${i === activeIndex ? 'active' : ''}`} key={i} src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title} />
+                    <div key={i}>
+                        <img className={`slide ${i === activeIndex ? 'active' : ''}`} src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title} />
                     </div>
                 ))}
             </div>

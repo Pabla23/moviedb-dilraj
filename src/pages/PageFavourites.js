@@ -8,8 +8,7 @@ const PageFavourites = () => {
   const [favMovies, setFavMovies] = useState([]);
 
   useEffect(() => {
-    const storedFavs = localStorage.getItem('favourites');
-    const favs = storedFavs ? JSON.parse(storedFavs) : [];
+    const favs = JSON.parse(localStorage.getItem('favourites')) || [];
     setFavMovies(favs);
   }, []);
   
