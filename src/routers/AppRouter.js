@@ -18,7 +18,7 @@ import { appFolderName } from '../globals/globals';
 // IMPORTANT: To view this app using npm start, you must delete the basename property from BrowserRouter
 function AppRouter() {
   return (
-    <BrowserRouter >
+    <BrowserRouter basename={appFolderName}>
       <div className="wrapper">
         <Header />
           <main>
