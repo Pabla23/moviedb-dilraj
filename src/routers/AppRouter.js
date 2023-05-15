@@ -14,9 +14,11 @@ import PageNotFound from '../pages/PageNotFound';
 // Globals
 import { appFolderName } from '../globals/globals';
 
+// IMPORTANT
+// IMPORTANT: To view this app using npm start, you must delete the basename property from BrowserRouter
 function AppRouter() {
   return (
-    <BrowserRouter basename={appFolderName}>
+    <BrowserRouter >
       <div className="wrapper">
         <Header />
           <main>

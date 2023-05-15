@@ -11,26 +11,24 @@ function FavButton({ movieObj, removeFromFavorites }) {
   }, [movieObj.id]);
 
   function handleAddFav() {
-    const storedFavs = localStorage.getItem('favourites');
-    const favs = storedFavs ? JSON.parse(storedFavs) : [];
-    
     // Check if the movie is already in the favourites list... avoid duplicates
-    if (!favs.find(fav => fav.id === movieObj.id)) {
-      favs.push(movieObj);
-      localStorage.setItem('favourites', JSON.stringify(favs));
+    if (!isFav) {
+      const favs = JSON.parse(localStorage.getItem('favourites')) || [];
+      const newFavs = [...favs, movieObj];
+      localStorage.setItem('favourites', JSON.stringify(newFavs));
       setIsFav(true);
     }
   }
   
   function handleRemoveFav() {
-    const storedFavs = localStorage.getItem('favourites');
-    const favs = storedFavs ? JSON.parse(storedFavs) : [];
-    
-    const newFavs = favs.filter(fav => fav.id !== movieObj.id);
+    // Remove the movie from the favourites list
+    const favs = JSON.parse(localStorage.getItem('favourites')) || [];
+    const newFavs = favs.filter((movie) => movie.id !== movieObj.id);
     localStorage.setItem('favourites', JSON.stringify(newFavs));
     setIsFav(false);
-    // If we are on the favourites page, remove the movie from the list
-    if (window.location.pathname === '/moviedb/favourites') {
+
+    // If we are on the favourites page, remove the movie from the "favourites display" list instantly
+    if (window.location.pathname === '/favourites') {
       removeFromFavorites(movieObj.id);
     }
   }
