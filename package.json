@@ -1,8 +1,8 @@
 {
   "name": "moviedb",
   "version": "0.1.0",
-  "homepage": ".",
   "private": true,
+  "homepage": "/moviedb",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "react": "^18.2.0",
