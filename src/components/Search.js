@@ -12,10 +12,9 @@ function Search ( {closeMenu} ) {
 
     const searchWrapperRef = useRef(null);
     
+    //useEffect to fetch movie data from API
     useEffect(() => {
-
         const fetchMovie = async () => {
-
             const response = await fetch(`https://api.themoviedb.org/3/search/movie?language=en-US&query=${query}`, {
                 headers: {
                     'Accept': 'application/json',
@@ -28,9 +27,7 @@ function Search ( {closeMenu} ) {
             data = data.results.splice(0, 6);
             setMovieData(data);
         }
-
         fetchMovie();
-
     }, [query]);
 
     const handleChange = (event) => {
